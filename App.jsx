@@ -11,6 +11,7 @@ import NavigationList from './src/screens/NavigationList';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import SigninScreen from './src/screens/SigninScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import HomeScreen from './src/screens/HomeScreen';
 import EmailSentScreen from './src/screens/FlashMessageScreens/EmailSentScreen';
 import PhoneVerifiedScreen from './src/screens/FlashMessageScreens/PhoneVerifiedScreen';
 import OfferSentScreen from './src/screens/FlashMessageScreens/OfferSentScreen';
@@ -33,10 +34,14 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ReservationPlacedScreen" headerMode="none">
+      <Stack.Navigator initialRouteName="HomeScreen" headerMode="none">
         <Stack.Screen
           name="NavigationList"
           component={NavigationList}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
         />
         <Stack.Screen
           name="OnboardingScreen"
