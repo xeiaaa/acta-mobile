@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // Components
 import Text from '../Text/Text';
 
-import { button, colors } from '../../styles';
+import { button, colors, typography } from '../../styles';
 
 const Button = ({
   buttonStyle, textStyle, text, type, touchableProps, outline,
@@ -30,6 +30,7 @@ const Button = ({
       {...touchableProps}
     >
       <Text style={{
+        ...typography.buttonText,
         color: outline ? colors[type] : type === 'white' ? colors.text.black : colors.white,
         ...textStyle,
       }}
