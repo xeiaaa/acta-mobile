@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 const Text = ({ style, children }) => (
   <RNText style={{
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: 'Avenir',
     ...style,
   }}
