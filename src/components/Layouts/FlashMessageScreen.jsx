@@ -10,7 +10,7 @@ import Button from '../Button/Button';
 import Title from '../Title/Title';
 
 import emailSentIcon from '../../../assets/email-sent-icon.png';
-import { colors } from '../../styles';
+import { colors, sizing } from '../../styles';
 
 const FlashMessageScreen = ({
   source, title, subtitle, buttonText, buttonOnPress,
@@ -34,7 +34,7 @@ const FlashMessageScreen = ({
       />
     </TouchableOpacity>
 
-    <View style={{ alignItems: 'center', marginBottom: 32 }}>
+    <View style={{ alignItems: 'center', marginBottom: sizing.margin.xl }}>
       <Image source={source} />
     </View>
     <Title title={title} subtitle={subtitle} />

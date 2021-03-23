@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // Components
 import Text from '../Text/Text';
 
-import { colors } from '../../styles';
+import { colors, sizing } from '../../styles';
 
 const CustomHeaderLayout = ({ children, title }) => (
   <View style={[styles.container]}>
@@ -45,8 +45,9 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 90,
-    paddingBottom: 32,
-    marginTop: 20,
+    // paddingBottom: 32,
+    paddingBottom: sizing.padding.xl,
+    marginTop: sizing.margin.l,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
-    paddingTop: 33,
+    paddingTop: sizing.padding.xl,
   },
 });
 

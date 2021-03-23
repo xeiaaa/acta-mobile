@@ -8,12 +8,12 @@ import PropTypes from 'prop-types';
 // Components
 import Text from '../Text/Text';
 
-import { colors } from '../../styles';
+import { colors, sizing } from '../../styles';
 
 const LabelInput = ({
   labelText, hasIconButton, iconName, iconOnPress, textInputProps, containerStyle,
 }) => (
-  <View style={{ paddingHorizontal: 30, ...containerStyle }}>
+  <View style={{ paddingHorizontal: sizing.padding.xl, ...containerStyle }}>
     <Text style={styles.label}>
       { labelText }
     </Text>
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 12,
     fontFamily: 'AvenirBook',
-    marginBottom: 8,
-    marginLeft: 10,
+    marginBottom: sizing.margin.xs,
+    marginLeft: sizing.margin.s,
     color: colors.text.labelGrey,
   },
   iconButton: {
@@ -76,12 +76,12 @@ const styles = StyleSheet.create({
   textInput: {
     fontSize: 16,
     fontFamily: 'AvenirBook',
-    marginBottom: 8,
+    marginBottom: sizing.padding.xs,
     color: colors.text.black,
     borderBottomColor: colors.lightGrey,
     borderBottomWidth: 1,
-    paddingBottom: 9,
-    paddingLeft: 10,
+    paddingBottom: sizing.padding.s,
+    paddingLeft: sizing.padding.s,
   },
 });
 
