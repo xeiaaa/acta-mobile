@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, TouchableOpacity, Image, FlatList, StyleSheet,
+  View, TouchableOpacity, Image, FlatList, StyleSheet, Dimensions,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -9,40 +9,37 @@ import Text from '../Text/Text';
 import Badges from '../Badges/Badges';
 
 import {
-  colors, sizing, typography, global,
+  sizing, typography, global,
 } from '../../styles';
 import { phpFormat } from '../../lib/helpers';
 
 // mock data
 import sampleTruck from '../../../assets/sample-truck.png';
 
-const ProductHorizontalList = ({
-  products, title, containerStyle, seeAll,
+const screen = Dimensions.get('screen');
+const flatListWidth = screen.width - (sizing.padding.m * 2);
+
+const ProductList = ({
+  products, containerStyle,
 }) => (
   <View style={{ ...containerStyle }}>
-    <View style={styles.header}>
-      <Text style={typography.listTitle}>{ title }</Text>
-      <TouchableOpacity onPress={seeAll}>
-        <Text style={{
-          ...typography.link,
-          color: colors.primary,
-        }}
-        >
-          See All
-        </Text>
-      </TouchableOpacity>
-    </View>
-
     <FlatList
       style={styles.flatlist}
       data={products}
       keyExtractor={(item) => item.id}
+      numColumns={2}
       renderItem={({ item }) => (
         <TouchableOpacity
           style={styles.touchable}
           activeOpacity={0.7}
         >
-          <Image source={sampleTruck} style={{ width: 200, height: 150 }} />
+          <Image
+            source={sampleTruck}
+            style={{
+              width: flatListWidth * 0.5,
+              height: flatListWidth * 0.5 * 0.75,
+            }}
+          />
           <Text style={{ ...typography.productTitle }}>{item.name}</Text>
           <Badges badges={item.tags} />
 
@@ -71,23 +68,18 @@ const ProductHorizontalList = ({
           </View>
         </TouchableOpacity>
       )}
-      horizontal
     />
   </View>
 );
 
-ProductHorizontalList.defaultProps = {
+ProductList.defaultProps = {
   products: [],
-  title: '',
   containerStyle: {},
-  seeAll: () => {},
 };
 
-ProductHorizontalList.propTypes = {
+ProductList.propTypes = {
   products: PropTypes.array,
-  title: PropTypes.string,
   containerStyle: PropTypes.object,
-  seeAll: PropTypes.func,
 };
 
 const styles = StyleSheet.create({
@@ -97,19 +89,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: sizing.padding.m,
   },
-  flatlist: { marginLeft: sizing.padding.m, marginTop: sizing.margin.m },
+  flatlist: {
+    paddingHorizontal: sizing.padding.m,
+    // marginTop: sizing.margin.m,
+  },
   price: {
     ...typography.listTitle,
     marginBottom: sizing.margin.xs,
   },
   touchable: {
-    marginRight: sizing.margin.l,
     marginBottom: sizing.margin.s,
-    width: 200,
+    width: flatListWidth * 0.5,
   },
   infoWrapper: {
     ...global.flexRow,
-    width: 200,
+    width: '100%',
     flexWrap: 'wrap',
   },
   info: {
@@ -121,4 +115,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductHorizontalList;
+export default ProductList;

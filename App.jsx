@@ -12,6 +12,7 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import SigninScreen from './src/screens/SigninScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import HomeScreen from './src/screens/HomeScreen';
+import FeaturedProductsScreen from './src/screens/FeaturedProductsScreen';
 import EmailSentScreen from './src/screens/FlashMessageScreens/EmailSentScreen';
 import PhoneVerifiedScreen from './src/screens/FlashMessageScreens/PhoneVerifiedScreen';
 import OfferSentScreen from './src/screens/FlashMessageScreens/OfferSentScreen';
@@ -74,6 +75,10 @@ export default function App() {
         <Stack.Screen
           name="ReservationPlacedScreen"
           component={ReservationPlacedScreen}
+        />
+        <Stack.Screen
+          name="FeaturedProductsScreen"
+          component={FeaturedProductsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
