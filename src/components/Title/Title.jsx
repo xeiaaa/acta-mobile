@@ -6,18 +6,19 @@ import PropTypes from 'prop-types';
 
 // Components
 import Text from '../Text/Text';
+import { sizing } from '../../styles';
 
 const Title = ({ title, subtitle }) => (
   <View style={{ marginBottom: 50, alignItems: 'center', paddingHorizontal: 30 }}>
     <Text style={{
-      fontSize: 30,
+      fontSize: sizing.font.xl,
       fontFamily: 'AvenirHeavy',
     }}
     >
       { title }
     </Text>
     <Text style={{
-      fontSize: 14,
+      fontSize: sizing.font.s,
       fontFamily: 'AvenirBook',
       marginTop: 5,
       textAlign: 'center',

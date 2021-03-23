@@ -62,7 +62,7 @@ LabelInput.propTypes = {
 
 const styles = StyleSheet.create({
   label: {
-    fontSize: 12,
+    fontSize: sizing.font.xs,
     fontFamily: 'AvenirBook',
     marginBottom: sizing.margin.xs,
     marginLeft: sizing.margin.s,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     zIndex: 100,
   },
   textInput: {
-    fontSize: 16,
+    fontSize: sizing.font.m,
     fontFamily: 'AvenirBook',
     marginBottom: sizing.padding.xs,
     color: colors.text.black,

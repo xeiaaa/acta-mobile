@@ -11,7 +11,7 @@ import Title from '../components/Title/Title';
 import LabelInput from '../components/Form/LabelInput';
 import CustomHeaderLayout from '../components/Layouts/CustomHeaderLayout';
 
-import { colors } from '../styles';
+import { colors, sizing } from '../styles';
 
 const SigninScreen = ({ navigation }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -40,7 +40,7 @@ const SigninScreen = ({ navigation }) => {
           <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('ForgotPasswordScreen')}>
             <Text style={{
               color: colors.text.black,
-              fontSize: 14,
+              fontSize: sizing.font.s,
             }}
             >
               Forgot Password?
@@ -71,7 +71,7 @@ const SigninScreen = ({ navigation }) => {
           />
           <View style={{ flexDirection: 'row', marginTop: 16 }}>
             <Text style={{
-              fontSize: 14,
+              fontSize: sizing.font.s,
               fontFamily: 'AvenirBook',
               color: colors.midGrey,
             }}
@@ -82,7 +82,7 @@ const SigninScreen = ({ navigation }) => {
             </Text>
             <TouchableOpacity>
               <Text style={{
-                fontSize: 14,
+                fontSize: sizing.font.s,
                 fontFamily: 'AvenirBook',
                 color: colors.text.black,
               }}

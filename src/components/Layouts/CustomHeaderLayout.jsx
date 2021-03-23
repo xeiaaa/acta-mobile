@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: colors.white,
-    fontSize: 13,
+    fontSize: sizing.font.s,
   },
   content: {
     flex: 1,
