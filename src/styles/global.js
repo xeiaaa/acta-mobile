@@ -3,4 +3,10 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  flexRow: {
+    flexDirection: 'row',
+  },
+  flexColumn: {
+    flexDirection: 'column',
+  },
 };

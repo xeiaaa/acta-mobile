@@ -23,5 +23,6 @@ export default {
   text: {
     black: '#272833',
     labelGrey: '#929398',
+    grey: '#9F9F9F',
   },
 };
