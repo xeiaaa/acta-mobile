@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     height: 90,
     // paddingBottom: 32,
     paddingBottom: sizing.padding.xl,
-    marginTop: sizing.margin.l,
+    // marginTop: sizing.margin.l,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
