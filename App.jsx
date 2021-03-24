@@ -13,6 +13,7 @@ import SigninScreen from './src/screens/SigninScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import FeaturedProductsScreen from './src/screens/FeaturedProductsScreen';
+import ProductDetailsScreen from './src/screens/ProductDetailsScreen';
 import EmailSentScreen from './src/screens/FlashMessageScreens/EmailSentScreen';
 import PhoneVerifiedScreen from './src/screens/FlashMessageScreens/PhoneVerifiedScreen';
 import OfferSentScreen from './src/screens/FlashMessageScreens/OfferSentScreen';
@@ -79,6 +80,10 @@ export default function App() {
         <Stack.Screen
           name="FeaturedProductsScreen"
           component={FeaturedProductsScreen}
+        />
+        <Stack.Screen
+          name="ProductDetailsScreen"
+          component={ProductDetailsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

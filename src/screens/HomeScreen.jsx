@@ -19,6 +19,7 @@ const HomeScreen = ({ navigation }) => (
         products={products}
         title="Featured Products"
         seeAll={() => navigation.navigate('FeaturedProductsScreen')}
+        navigation={navigation}
       />
       <ProductHorizontalList
         products={products}
@@ -26,6 +27,7 @@ const HomeScreen = ({ navigation }) => (
         containerStyle={{
           marginTop: sizing.margin.xl,
         }}
+        navigation={navigation}
       />
     </ScrollView>
   </CustomHeaderLayout>

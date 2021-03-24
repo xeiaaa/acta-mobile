@@ -17,7 +17,7 @@ import { phpFormat } from '../../lib/helpers';
 import sampleTruck from '../../../assets/sample-truck.png';
 
 const ProductHorizontalList = ({
-  products, title, containerStyle, seeAll,
+  products, title, containerStyle, seeAll, navigation,
 }) => (
   <View style={{ ...containerStyle }}>
     <View style={styles.header}>
@@ -41,6 +41,7 @@ const ProductHorizontalList = ({
         <TouchableOpacity
           style={styles.touchable}
           activeOpacity={0.7}
+          onPress={() => navigation.navigate('ProductDetailsScreen')}
         >
           <Image source={sampleTruck} style={{ width: 200, height: 150 }} />
           <Text style={{ ...typography.productTitle }}>{item.name}</Text>
@@ -81,6 +82,7 @@ ProductHorizontalList.defaultProps = {
   title: '',
   containerStyle: {},
   seeAll: () => {},
+  navigation: null,
 };
 
 ProductHorizontalList.propTypes = {
@@ -88,6 +90,7 @@ ProductHorizontalList.propTypes = {
   title: PropTypes.string,
   containerStyle: PropTypes.object,
   seeAll: PropTypes.func,
+  navigation: PropTypes.any,
 };
 
 const styles = StyleSheet.create({
