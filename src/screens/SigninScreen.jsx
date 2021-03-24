@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // Components
 import Text from '../components/Text/Text';
 import Button from '../components/Button/Button';
-import Title from '../components/Title/Title';
+import FullTitle from '../components/FullTitle/FullTitle';
 import LabelInput from '../components/Form/LabelInput';
 import CustomHeaderLayout from '../components/Layouts/CustomHeaderLayout';
 
@@ -18,7 +18,7 @@ const SigninScreen = ({ navigation }) => {
   return (
     <CustomHeaderLayout title="LOG IN">
       <View>
-        <Title title="Let's sign you in" subtitle="Welcome back, you’ve been missed!" />
+        <FullTitle title="Let's sign you in" subtitle="Welcome back, you’ve been missed!" />
         <LabelInput
           labelText="Username or Email"
           textInputProps={{
@@ -107,16 +107,5 @@ SigninScreen.defaultProps = {
 SigninScreen.propTypes = {
   navigation: PropTypes.any,
 };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#000',
-//   },
-//   absoluteCenter: {
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-// });
 
 export default SigninScreen;

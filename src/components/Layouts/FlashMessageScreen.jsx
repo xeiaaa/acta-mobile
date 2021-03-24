@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 // Components
 import Button from '../Button/Button';
-import Title from '../Title/Title';
+import FullTitle from '../FullTitle/FullTitle';
 
 import emailSentIcon from '../../../assets/email-sent-icon.png';
 import { colors, sizing } from '../../styles';
@@ -37,7 +37,7 @@ const FlashMessageScreen = ({
     <View style={{ alignItems: 'center', marginBottom: sizing.margin.xl }}>
       <Image source={source} />
     </View>
-    <Title title={title} subtitle={subtitle} />
+    <FullTitle title={title} subtitle={subtitle} />
 
     <View style={{ alignItems: 'center' }}>
       <Button
