@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import Text from '../Text/Text';
 import { typography } from '../../styles';
 
-const Title = ({ text, style }) => (
+const Subtitle = ({ text, style }) => (
   <Text style={
     {
-      ...typography.title,
+      ...typography.subtitle,
       ...style,
     }
   }
@@ -17,14 +17,14 @@ const Title = ({ text, style }) => (
   </Text>
 );
 
-Title.defaultProps = {
+Subtitle.defaultProps = {
   text: '',
   style: {},
 };
 
-Title.propTypes = {
+Subtitle.propTypes = {
   text: PropTypes.string,
   style: PropTypes.object,
 };
 
-export default Title;
+export default Subtitle;
