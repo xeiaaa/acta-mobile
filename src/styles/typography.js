@@ -73,4 +73,15 @@ export default {
     fontSize: sizing.font.xxs,
     color: colors.text.grey,
   },
+  align: {
+    center: {
+      textAlign: 'center',
+    },
+    right: {
+      textAlign: 'right',
+    },
+    left: {
+      textAlign: 'left',
+    },
+  },
 };
