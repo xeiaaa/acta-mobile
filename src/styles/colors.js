@@ -20,6 +20,10 @@ export default {
   google: '#DE4D3B',
   fb: '#4267B2',
 
+  textBlack: '#272833',
+  labelGrey: '#929398',
+  textGrey: '#9F9F9F',
+
   text: {
     black: '#272833',
     labelGrey: '#929398',
