@@ -14,6 +14,7 @@ const FullTitle = ({ title, subtitle }) => (
     <Subtitle
       text={subtitle}
       style={{
+        textAlign: 'center',
         marginTop: 5,
       }}
     />
