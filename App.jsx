@@ -36,7 +36,7 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen" headerMode="none">
+      <Stack.Navigator initialRouteName="NavigationList" headerMode="none">
         <Stack.Screen
           name="NavigationList"
           component={NavigationList}
