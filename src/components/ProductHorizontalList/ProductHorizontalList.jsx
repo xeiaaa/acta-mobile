@@ -9,7 +9,7 @@ import Text from '../Text/Text';
 import Badges from '../Badges/Badges';
 
 import {
-  colors, sizing, typography, global,
+  sizing, typography, global,
 } from '../../styles';
 import { phpFormat } from '../../lib/helpers';
 
@@ -17,22 +17,9 @@ import { phpFormat } from '../../lib/helpers';
 import sampleTruck from '../../../assets/sample-truck.png';
 
 const ProductHorizontalList = ({
-  products, title, containerStyle, seeAll, navigation,
+  products, containerStyle, navigation,
 }) => (
   <View style={{ ...containerStyle }}>
-    <View style={styles.header}>
-      <Text style={typography.listTitle}>{ title }</Text>
-      <TouchableOpacity onPress={seeAll}>
-        <Text style={{
-          ...typography.link,
-          color: colors.primary,
-        }}
-        >
-          See All
-        </Text>
-      </TouchableOpacity>
-    </View>
-
     <FlatList
       style={styles.flatlist}
       data={products}
@@ -79,27 +66,17 @@ const ProductHorizontalList = ({
 
 ProductHorizontalList.defaultProps = {
   products: [],
-  title: '',
   containerStyle: {},
-  seeAll: () => {},
   navigation: null,
 };
 
 ProductHorizontalList.propTypes = {
   products: PropTypes.array,
-  title: PropTypes.string,
   containerStyle: PropTypes.object,
-  seeAll: PropTypes.func,
   navigation: PropTypes.any,
 };
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: sizing.padding.m,
-  },
   flatlist: { marginLeft: sizing.padding.m, marginTop: sizing.margin.m },
   price: {
     ...typography.listTitle,
