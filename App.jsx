@@ -10,6 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NavigationList from './src/screens/NavigationList';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import SigninScreen from './src/screens/SigninScreen';
+import SignupScreen from './src/screens/SignupScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import FeaturedProductsScreen from './src/screens/FeaturedProductsScreen';
@@ -52,6 +53,10 @@ export default function App() {
         <Stack.Screen
           name="SigninScreen"
           component={SigninScreen}
+        />
+        <Stack.Screen
+          name="SignupScreen"
+          component={SignupScreen}
         />
         <Stack.Screen
           name="ForgotPasswordScreen"

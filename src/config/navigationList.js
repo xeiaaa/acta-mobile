@@ -1,6 +1,7 @@
 // Navigation
 import OnboardingScreen from '../screens/OnboardingScreen';
 import SigninScreen from '../screens/SigninScreen';
+import SignupScreen from '../screens/SignupScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import HomeScreen from '../screens/HomeScreen';
 import FeaturedProductsScreen from '../screens/FeaturedProductsScreen';
@@ -19,6 +20,10 @@ const navigationList = [
   {
     name: 'SigninScreen',
     component: SigninScreen,
+  },
+  {
+    name: 'SignupScreen',
+    component: SignupScreen,
   },
   {
     name: 'ForgotPasswordScreen',
