@@ -4,6 +4,7 @@ import SigninScreen from '../screens/SigninScreen';
 import SignupScreen from '../screens/SignupScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import HomeScreen from '../screens/HomeScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 import FeaturedProductsScreen from '../screens/FeaturedProductsScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import EmailSentScreen from '../screens/FlashMessageScreens/EmailSentScreen';
@@ -60,6 +61,10 @@ const navigationList = [
   {
     name: 'ReservationPlacedScreen',
     component: ReservationPlacedScreen,
+  },
+  {
+    name: 'SettingsScreen',
+    component: SettingsScreen,
   },
 ];
 
