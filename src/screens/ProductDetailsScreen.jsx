@@ -12,7 +12,7 @@ import Subtitle from '../components/Subtitle/Subtitle';
 import Specifications from '../components/Specifications/Specifications';
 
 import {
-  colors, sizing, typography, global,
+  colors, sizing, typography, globals,
 } from '../styles';
 import Badge from '../components/Badge/Badge';
 import Button from '../components/Button/Button';
@@ -49,15 +49,15 @@ const ProductDetailsScreen = () => {
           >
             <Title text="Truck Sample Green Eight Wheeler" style={{ ...typography.align.center, marginBottom: sizing.margin.s }} />
             <View style={[
-              global.flexRow,
-              global.absoluteCenter,
+              globals.flexRow,
+              globals.absoluteCenter,
               { marginBottom: sizing.margin.s }]}
             >
               <Badge text="Cargo" />
               <Badge text="Classic" />
             </View>
             <Subtitle text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod T incididunt ut labore et dolore magna aliqua. " style={{ ...typography.align.center, marginBottom: sizing.margin.s }} />
-            <View style={global.absoluteCenter}>
+            <View style={globals.absoluteCenter}>
               <Text style={{
                 ...sizing.font.xs,
                 ...typography.light,
@@ -87,7 +87,7 @@ const ProductDetailsScreen = () => {
             }}
             >
               <View style={{
-                ...global.flexRow,
+                ...globals.flexRow,
                 // justifyContent: 'space-evenly',
               }}
               >
@@ -151,7 +151,7 @@ const ProductDetailsScreen = () => {
               }
           </View>
 
-          <View style={{ ...global.absoluteCenter, marginVertical: sizing.margin.l }}>
+          <View style={{ ...globals.absoluteCenter, marginVertical: sizing.margin.l }}>
             <Button text="reserve" type="secondary" />
           </View>
         </ScrollView>

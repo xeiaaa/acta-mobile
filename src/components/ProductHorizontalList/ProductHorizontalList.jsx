@@ -9,7 +9,7 @@ import Text from '../Text/Text';
 import Badges from '../Badges/Badges';
 
 import {
-  sizing, typography, global,
+  sizing, typography, globals,
 } from '../../styles';
 import { phpFormat } from '../../lib/helpers';
 
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     width: 200,
   },
   infoWrapper: {
-    ...global.flexRow,
+    ...globals.flexRow,
     width: 200,
     flexWrap: 'wrap',
   },

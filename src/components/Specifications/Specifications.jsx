@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Text from '../Text/Text';
 
 import {
-  colors, sizing, typography, global,
+  colors, sizing, typography, globals,
 } from '../../styles';
 
 const Specifications = ({ data }) => (
@@ -42,7 +42,7 @@ Specifications.propTypes = {
 const styles = StyleSheet.create({
   container: { width: '100%', paddingHorizontal: sizing.padding.l },
   row: {
-    ...global.flexRow,
+    ...globals.flexRow,
     justifyContent: 'space-between',
     flex: 1,
     paddingVertical: sizing.padding.l,

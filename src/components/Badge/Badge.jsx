@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Text from '../Text/Text';
 
 import {
-  colors, typography, global, sizing,
+  colors, typography, globals, sizing,
 } from '../../styles';
 
 const Badge = ({ text, color, backgroundColor }) => (
@@ -31,7 +31,7 @@ Badge.defaultProps = {
 
 const styles = StyleSheet.create({
   badge: {
-    ...global.absoluteCenter,
+    ...globals.absoluteCenter,
     height: 20,
     backgroundColor: colors.primary,
     paddingHorizontal: sizing.padding.s,

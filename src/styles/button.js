@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 import colors from './colors';
-import global from './global';
+import globals from './globals';
 
 const button = {
   width: 240,
   height: 44,
-  ...global.absoluteCenter,
+  ...globals.absoluteCenter,
 };
 
 const buttonRounded = {
