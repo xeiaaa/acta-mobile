@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ActivityIndicator,
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -10,7 +11,7 @@ import Text from '../Text/Text';
 import { button, colors, typography } from '../../styles';
 
 const Button = ({
-  buttonStyle, textStyle, text, type, touchableProps, outline,
+  buttonStyle, textStyle, text, type, touchableProps, outline, isLoading, isLoadingIconColor,
 }) => {
   let defaultStyle = { ...button.button };
 
@@ -35,7 +36,11 @@ const Button = ({
         ...textStyle,
       }}
       >
-        { text.toUpperCase() }
+        {
+          isLoading
+            ? <ActivityIndicator color={isLoadingIconColor} />
+            : text.toUpperCase()
+        }
       </Text>
     </TouchableOpacity>
   );
@@ -48,6 +53,8 @@ Button.defaultProps = {
   type: 'primary',
   touchableProps: {},
   outline: false,
+  isLoading: false,
+  isLoadingIconColor: colors.white,
 };
 
 Button.propTypes = {
@@ -57,6 +64,8 @@ Button.propTypes = {
   type: PropTypes.oneOf(['white', 'primary', 'secondary', 'accent', 'disabled', 'danger', 'warning', 'fb', 'google']),
   touchableProps: PropTypes.object,
   outline: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  isLoadingIconColor: PropTypes.string,
 };
 
 export default Button;
