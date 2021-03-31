@@ -9,7 +9,7 @@ import Text from '../Text/Text';
 
 import { colors, sizing } from '../../styles';
 
-const CustomHeaderLayout = ({ children, title }) => (
+const CustomHeaderLayout = ({ children, title, subheader }) => (
   <View style={[styles.container]}>
     <StatusBar barStyle="light-content" />
     <View style={styles.header}>
@@ -18,6 +18,7 @@ const CustomHeaderLayout = ({ children, title }) => (
         { title.toUpperCase() }
       </Text>
     </View>
+    { subheader }
     <View style={styles.content}>
       { children }
     </View>
@@ -27,11 +28,13 @@ const CustomHeaderLayout = ({ children, title }) => (
 CustomHeaderLayout.defaultProps = {
   children: null,
   title: '',
+  subheader: null,
 };
 
 CustomHeaderLayout.propTypes = {
   children: PropTypes.any,
   title: PropTypes.string,
+  subheader: PropTypes.any,
 };
 
 const styles = StyleSheet.create({
