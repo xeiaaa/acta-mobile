@@ -5,6 +5,7 @@ import SignupScreen from '../screens/SignupScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import TransactionScreen from '../screens/TransactionScreen';
 import FeaturedProductsScreen from '../screens/FeaturedProductsScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import EmailSentScreen from '../screens/FlashMessageScreens/EmailSentScreen';
@@ -65,6 +66,10 @@ const navigationList = [
   {
     name: 'SettingsScreen',
     component: SettingsScreen,
+  },
+  {
+    name: 'TransactionScreen',
+    component: TransactionScreen,
   },
 ];
 

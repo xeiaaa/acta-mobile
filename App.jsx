@@ -14,6 +14,7 @@ import SignupScreen from './src/screens/SignupScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
+import TransactionScreen from './src/screens/TransactionScreen';
 import FeaturedProductsScreen from './src/screens/FeaturedProductsScreen';
 import ProductDetailsScreen from './src/screens/ProductDetailsScreen';
 import EmailSentScreen from './src/screens/FlashMessageScreens/EmailSentScreen';
@@ -94,6 +95,10 @@ export default function App() {
         <Stack.Screen
           name="SettingsScreen"
           component={SettingsScreen}
+        />
+        <Stack.Screen
+          name="TransactionScreen"
+          component={TransactionScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
