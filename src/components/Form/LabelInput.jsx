@@ -28,7 +28,7 @@ const LabelInput = ({
             <Ionicons
               name={iconName}
               size={24}
-              color={colors.veryLightGrey}
+              color={colors.primary}
             />
           </TouchableOpacity>
         )
