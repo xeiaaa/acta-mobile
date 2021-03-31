@@ -15,9 +15,6 @@ const withTextStyling = (Component) => {
       ...paddingParser(padding),
       ...style,
     };
-    if (margin) {
-      console.log({ styles });
-    }
 
     newProps.style = styles;
     newProps.margin = undefined;
