@@ -53,7 +53,6 @@ const SigninScreen = ({ navigation }) => {
           <LabelInput
             labelText="Email Address"
             textInputProps={{
-            // value: 'deemid',
               autoCapitalize: 'none',
               keyboardType: 'email-address',
               returnKeyType: 'next',
