@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ScrollView, Image, TouchableOpacity, View as RNView, StyleSheet,
+  ScrollView, Image, TouchableOpacity, View as RNView, StyleSheet, Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
@@ -15,86 +15,125 @@ import changePhotoIcon from '../../assets/change-photo-icon.png';
 
 // hoc
 import withTextStyling from '../hoc/withTextStyling';
+import { useAuth } from '../contexts/AuthContext';
 
 import { colors, globals } from '../styles';
+import { phpFormat } from '../lib/helpers';
 
 const View = withTextStyling(RNView);
 
-const SettingsScreen = ({ navigation }) => (
-  <CustomHeaderLayout title="settings & more">
-    <ScrollView>
-      <View style={{ ...globals.absoluteCenter }}>
-        <View style={styles.avatar}>
-          <Image source={actatraxLogo} style={{ width: 48, height: 48 }} />
+const SettingsScreen = ({ navigation }) => {
+  const { state: authState, logout } = useAuth();
+
+  return (
+    <CustomHeaderLayout title="settings & more">
+      <ScrollView>
+        <View style={{ ...globals.absoluteCenter }}>
+          <View style={styles.avatar}>
+            <Image source={actatraxLogo} style={{ width: 48, height: 48 }} />
+            <TouchableOpacity
+              style={styles.changePhotoButton}
+              activeOpacity={0.7}
+            >
+              <Image source={changePhotoIcon} style={{ width: 45, height: 45 }} />
+            </TouchableOpacity>
+          </View>
+
+          <Text type="heavy-l-textBlack" margin="t.l">
+            {authState.user.firstName}
+            {' '}
+            {authState.user.lastName}
+          </Text>
+          <Text type="light-s-textBlack">{authState.user.email}</Text>
+        </View>
+        <View
+          style={styles.balanceWrapper}
+          padding="v.m"
+          margin="h.xl-t.s"
+        >
+          <Text type="medium-m-textBlack">BALANCE</Text>
+          <Text type="light-xl-textBlack">
+            ₱
+            {' '}
+            {phpFormat(authState.user.balance)}
+          </Text>
+          <Text type="light-9-textBlack">Updated March 15, 2021</Text>
+        </View>
+        <View padding="h.xl" margin="t.xs">
           <TouchableOpacity
-            style={styles.changePhotoButton}
             activeOpacity={0.7}
+            style={styles.row}
           >
-            <Image source={changePhotoIcon} style={{ width: 45, height: 45 }} />
+            <Text type="light-m-textBlack">Transaction History</Text>
+            <Ionicons
+              name="chevron-forward-outline"
+              size={24}
+              color={colors.black}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.row}
+          >
+            <Text type="light-m-textBlack">My Addresses</Text>
+            <Ionicons
+              name="chevron-forward-outline"
+              size={24}
+              color={colors.black}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.row}
+          >
+            <Text type="light-m-textBlack">Payment Details</Text>
+            <Ionicons
+              name="chevron-forward-outline"
+              size={24}
+              color={colors.black}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.row}
+          >
+            <Text type="light-m-textBlack">Settings</Text>
+            <Ionicons
+              name="chevron-forward-outline"
+              size={24}
+              color={colors.black}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.row}
+            onPress={() => {
+              Alert.alert('Log out', 'Are you sure', [
+                {
+                  text: 'Ok',
+                  onPress: () => {
+                    logout();
+                  },
+                },
+                {
+                  text: 'Cancel',
+                  style: 'cancel',
+                },
+              ]);
+            }}
+          >
+            <Text type="light-m-textBlack">Log out</Text>
+            <Ionicons
+              name="chevron-forward-outline"
+              size={24}
+              color={colors.black}
+            />
           </TouchableOpacity>
         </View>
-
-        <Text type="heavy-l-textBlack" margin="t.l">Bret Axl Sebastian Pura</Text>
-        <Text type="light-s-textBlack">cosmicdevcs@gmail.com</Text>
-      </View>
-      <View
-        style={styles.balanceWrapper}
-        padding="v.m"
-        margin="h.xl-t.s"
-      >
-        <Text type="medium-m-textBlack">BALANCE</Text>
-        <Text type="light-xl-textBlack">₱ 5,000,000.00</Text>
-        <Text type="light-9-textBlack">Updated March 15, 2021</Text>
-      </View>
-      <View padding="h.xl" margin="t.xs">
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={styles.row}
-        >
-          <Text type="light-m-textBlack">Transaction History</Text>
-          <Ionicons
-            name="chevron-forward-outline"
-            size={24}
-            color={colors.black}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={styles.row}
-        >
-          <Text type="light-m-textBlack">My Addresses</Text>
-          <Ionicons
-            name="chevron-forward-outline"
-            size={24}
-            color={colors.black}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={styles.row}
-        >
-          <Text type="light-m-textBlack">Payment Details</Text>
-          <Ionicons
-            name="chevron-forward-outline"
-            size={24}
-            color={colors.black}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={styles.row}
-        >
-          <Text type="light-m-textBlack">Settings</Text>
-          <Ionicons
-            name="chevron-forward-outline"
-            size={24}
-            color={colors.black}
-          />
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
-  </CustomHeaderLayout>
-);
+      </ScrollView>
+    </CustomHeaderLayout>
+  );
+};
 
 SettingsScreen.defaultProps = {
   navigation: null,
