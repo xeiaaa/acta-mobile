@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import * as SecureStore from 'expo-secure-store';
 import {
   View as RNView, TouchableOpacity, Alert, ScrollView, TouchableWithoutFeedback, Keyboard,
 } from 'react-native';
@@ -11,16 +12,19 @@ import FullTitle from '../components/FullTitle/FullTitle';
 import LabelInput from '../components/Form/LabelInput';
 import CustomHeaderLayout from '../components/Layouts/CustomHeaderLayout';
 import withTextStyling from '../hoc/withTextStyling';
+import { useAuth } from '../contexts/AuthContext';
 
 import { globals } from '../styles';
 import { delay } from '../lib/helpers';
-import { login } from '../lib/api';
+import { login, me } from '../lib/api';
 
 const View = withTextStyling(RNView);
 
 const SigninScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { dispatch } = useAuth();
+
+  const [email, setEmail] = useState('deemid@gmail.com');
+  const [password, setPassword] = useState('password');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(null);
   const passwordRef = useRef(null);
@@ -36,8 +40,24 @@ const SigninScreen = ({ navigation }) => {
 
       await delay(500);
       setIsLoading(false);
-      Alert.alert('Welcome!', 'You are successfully logged in!');
+
+      // Set token
+      await SecureStore.setItemAsync('token', data.token);
       console.log({ data });
+      const { data: meData } = await me();
+
+      Alert.alert('Welcome!', 'You are successfully logged in!', [{
+        text: 'Ok',
+        onPress: () => {
+          dispatch({
+            type: 'signin',
+            payload: {
+              token: data.token,
+              user: meData,
+            },
+          });
+        },
+      }]);
     } catch (err) {
       setIsLoading(false);
       Alert.alert('Error!', err.response.data.error || 'An unknown error occurred!');
